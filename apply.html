@@ -1,36 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Apply - Civitas Public Services</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apply — Civitas Public Services</title>
+  <meta name="description" content="Apply for PAN, Passport, Voter ID, Ayushman, RTO & certificates with Civitas. 11,000+ clients, WhatsApp-first support.">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.4/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    :root{--brand:#0ea5e9}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--brand);color:#fff;border-radius:999px;padding:.9rem 1.2rem;font-weight:600}
+    .btn-outline{border:1px solid #cbd5e1;border-radius:999px;padding:.9rem 1.2rem}
+    .card{border:1px solid #e5e7eb;border-radius:1rem;box-shadow:0 10px 30px rgba(2,6,23,.06);background:#fff}
+    .tick::before{content:"✓";margin-right:.5rem;color:#059669;font-weight:800}
+    .whatsapp-fab{position:fixed;right:18px;bottom:18px;z-index:50;background:#25D366;color:white;border-radius:999px;padding:.9rem 1rem;box-shadow:0 10px 25px rgba(0,0,0,.15)}
+  </style>
 </head>
-<body>
-<header>
-<h1>Apply for a Service</h1>
-<p>Fill out the form below and our team will contact you shortly.</p>
-</header>
+<body class="bg-slate-50 text-slate-800">
+  <!-- Top bar -->
+  <header class="bg-white border-b sticky top-0 z-40">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="/" class="text-xl font-extrabold">CIVITAS</a>
+      <a href="/" class="btn-outline">← Back to Home</a>
+    </div>
+  </header>
 
-<form name="civitas-apply" method="POST" data-netlify="true">
-<input type="hidden" name="form-name" value="civitas-apply">
-<label>Full Name</label>
-<input type="text" name="name" required>
+  <!-- Hero -->
+  <section class="max-w-5xl mx-auto px-4 pt-10 pb-4">
+    <h1 class="text-3xl md:text-4xl font-extrabold">Apply in minutes</h1>
+    <p class="text-slate-600 mt-2">Fill this quick form. We’ll confirm on WhatsApp within 10 minutes (working hours).</p>
+  </section>
 
-<label>Mobile Number</label>
-<input type="text" name="phone" required pattern="[0-9]{10}">
+  <!-- Form + Sidebar -->
+  <main class="max-w-5xl mx-auto px-4 pb-16 grid lg:grid-cols-3 gap-8">
+    <!-- FORM -->
+    <div class="lg:col-span-2">
+      <div class="card p-6">
+        <!-- Netlify form -->
+        <form name="civitas-apply" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?submitted=1" class="grid gap-4">
+          <input type="hidden" name="form-name" value="civitas-apply" />
+          <p class="hidden"><label>Don’t fill this out: <input name="bot-field" /></label></p>
 
-<label>Service Type</label>
-<input type="text" name="service" required>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium">Full Name</label>
+              <input class="mt-1 w-full border rounded-lg p-3" type="text" name="name" placeholder="Rahul Sharma" required>
+            </div>
+            <div>
+              <label class="block text-sm font-medium">WhatsApp Number</label>
+              <input class="mt-1 w-full border rounded-lg p-3" type="tel" name="phone" placeholder="98XXXXXXXX" pattern="[0-9]{10}" required>
+            </div>
+          </div>
 
-<label>Message (optional)</label>
-<textarea name="message"></textarea>
+          <div>
+            <label class="block text-sm font-medium">Select Service</label>
+            <select class="mt-1 w-full border rounded-lg p-3" name="service" required>
+              <option value="">Choose…</option>
+              <option>PAN Card (New/Update/Print)</option>
+              <option>Voter ID (New/Update/Print)</option>
+              <option>Passport (New/Renewal)</option>
+              <option>Ayushman Bharat Card</option>
+              <option>Driving License / RTO Services</option>
+              <option>Birth/Death/Income/Caste/Domicile Certificate</option>
+            </select>
+          </div>
 
-<button type="submit">Submit Application</button>
-</form>
+          <div>
+            <label class="block text-sm font-medium">Message (optional)</label>
+            <textarea class="mt-1 w-full border rounded-lg p-3" name="message" rows="4" placeholder="Any details we should know?"></textarea>
+          </div>
 
-<footer>
-<p>Need help? <a href="https://wa.me/919540212948">Chat on WhatsApp</a></p>
-</footer>
+          <div class="flex items-center gap-3">
+            <button class="btn" type="submit">Submit Application</button>
+            <a class="btn-outline" id="wa-cta" href="#" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          </div>
+
+          <p class="text-xs text-slate-500 mt-2">By submitting, you agree to our terms & privacy policy. Govt. fees extra wherever applicable.</p>
+        </form>
+      </div>
+
+      <!-- Success note if redirected with ?submitted=1 -->
+      <div id="success" class="hidden mt-4 p-4 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800">
+        ✅ Thank you! Your request is received. We’ll contact you on WhatsApp shortly.
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="space-y-6">
+      <div class="card p-6">
+        <div class="text-lg font-semibold mb-2">Why apply with Civitas?</div>
+        <ul class="space-y-2 text-slate-700">
+          <li class="tick">Document checklist & guidance</li>
+          <li class="tick">Live status updates on WhatsApp</li>
+          <li class="tick">11,000+ applications processed</li>
+          <li class="tick">Doorstep pickup in NCR</li>
+        </ul>
+      </div>
+      <div class="card p-6">
+        <div class="text-lg font-semibold mb-2">Support</div>
+        <p class="text-slate-700">Mon–Sat, 10am–7pm</p>
+        <p class="text-slate-700"><a href="tel:+919540212948">+91 9540212948</a><br><a href="mailto:infocivitasservices@gmail.com">infocivitasservices@gmail.com</a></p>
+      </div>
+    </aside>
+  </main>
+
+  <!-- WhatsApp FAB -->
+  <a class="whatsapp-fab" href="https://wa.me/919540212948?text=Hi%20Civitas%2C%20I%20want%20to%20apply" aria-label="WhatsApp">
+    WhatsApp
+  </a>
+
+  <script>
+    // Show success message if redirected with ?submitted=1
+    if (new URLSearchParams(location.search).get('submitted') === '1') {
+      const box = document.getElementById('success');
+      if (box) box.classList.remove('hidden');
+    }
+
+    // Dynamic WhatsApp prefill with name + service
+    const waBtn = document.getElementById('wa-cta');
+    const form = document.forms['civitas-apply'];
+    function updateWA() {
+      const name = encodeURIComponent(form.name.value || '');
+      const svc  = encodeURIComponent(form.service.value || '');
+      const msg  = encodeURIComponent(form.message.value || '');
+      const text = `Hi Civitas, I want to apply for ${svc}. My name is ${name}. ${msg ? "Note: "+msg : ""}`;
+      waBtn.href = `https://wa.me/919540212948?text=${text}`;
+    }
+    form.addEventListener('input', updateWA);
+    updateWA();
+  </script>
 </body>
 </html>
