@@ -4,39 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Civitas Admin</title>
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </head>
   <body>
-    <!-- Add a container for the CMS -->
-    <div id="cms-container"></div>
-
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="https://unpkg.com/decap-cms@3.8.4/dist/decap-cms.js"></script>
     <script>
-      // Wait for everything to load
-      document.addEventListener('DOMContentLoaded', function() {
-        // Wait for DecapCMS to be available
-        if (typeof DecapCMS !== 'undefined') {
-          DecapCMS.init();
-        } else {
-          // If not loaded yet, wait for it
-          window.addEventListener('load', function() {
-            if (typeof DecapCMS !== 'undefined') {
-              DecapCMS.init();
-            }
-          });
-        }
-
-        // Netlify Identity code
-        if (window.netlifyIdentity) {
-          window.netlifyIdentity.on("init", (user) => {
-            if (!user) {
-              window.netlifyIdentity.on("login", () =>
-                document.location.href = "/admin/"
-              );
-            }
-          });
-        }
-      });
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () =>
+              document.location.href = "/admin/"
+            );
+          }
+        });
+      }
     </script>
   </body>
 </html>
