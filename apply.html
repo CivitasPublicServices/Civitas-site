@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply - Civitas Public Services</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Apply for a Service</h1>
+<p>Fill out the form below and our team will contact you shortly.</p>
+</header>
+
+<form name="civitas-apply" method="POST" data-netlify="true">
+<input type="hidden" name="form-name" value="civitas-apply">
+<label>Full Name</label>
+<input type="text" name="name" required>
+
+<label>Mobile Number</label>
+<input type="text" name="phone" required pattern="[0-9]{10}">
+
+<label>Service Type</label>
+<input type="text" name="service" required>
+
+<label>Message (optional)</label>
+<textarea name="message"></textarea>
+
+<button type="submit">Submit Application</button>
+</form>
+
+<footer>
+<p>Need help? <a href="https://wa.me/919540212948">Chat on WhatsApp</a></p>
+</footer>
+</body>
+</html>
