@@ -7,24 +7,36 @@
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </head>
   <body>
-    <!-- Add this script to initialize the CMS -->
-    <script>
-      DecapCMS.init();
-      
-      // Optional custom preview scripts can go here later.
-    </script>
+    <!-- Add a container for the CMS -->
+    <div id="cms-container"></div>
 
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", (user) => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () =>
-              document.location.href = "/admin/"
-            );
-          }
-        });
-      }
+      // Wait for everything to load
+      document.addEventListener('DOMContentLoaded', function() {
+        // Wait for DecapCMS to be available
+        if (typeof DecapCMS !== 'undefined') {
+          DecapCMS.init();
+        } else {
+          // If not loaded yet, wait for it
+          window.addEventListener('load', function() {
+            if (typeof DecapCMS !== 'undefined') {
+              DecapCMS.init();
+            }
+          });
+        }
+
+        // Netlify Identity code
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", (user) => {
+            if (!user) {
+              window.netlifyIdentity.on("login", () =>
+                document.location.href = "/admin/"
+              );
+            }
+          });
+        }
+      });
     </script>
   </body>
 </html>
