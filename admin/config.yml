@@ -1,0 +1,29 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets"
+public_folder: "/assets"
+
+collections:
+  - name: "pages"
+    label: "Website Content"
+    files:
+      - file: "index.html"
+        label: "Homepage"
+        name: "homepage"
+        editor: { preview: false }
+        fields:
+          - { label: "Homepage HTML", name: "body", widget: "text" }
+      - file: "apply.html"
+        label: "Apply Page"
+        name: "apply"
+        editor: { preview: false }
+        fields:
+          - { label: "Apply Page HTML", name: "body", widget: "text" }
+      - file: "style.css"
+        label: "Site Styles"
+        name: "style"
+        editor: { preview: false }
+        fields:
+          - { label: "CSS Styles", name: "body", widget: "text" }
