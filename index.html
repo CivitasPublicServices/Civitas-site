@@ -1,34 +1,277 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Civitas Public Services</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Civitas Public Services — PAN, Passport, Voter ID & More</title>
+  <meta name="description" content="Get PAN, Passport, Voter ID, Ayushman, Certificates & RTO services with Civitas. 11,000+ clients served. Fast, reliable, WhatsApp-first support.">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.4/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    :root{--brand:#0ea5e9}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--brand);color:#fff;border-radius:999px;padding:.9rem 1.2rem;font-weight:600}
+    .btn-outline{border:1px solid #cbd5e1;border-radius:999px;padding:.9rem 1.2rem}
+    .glass{backdrop-filter: blur(8px); background: rgba(255,255,255,.6)}
+    .card{border:1px solid #e5e7eb;border-radius:1rem;box-shadow:0 10px 30px rgba(2,6,23,.06);background:#fff}
+    .badge{background:rgba(14,165,233,.1);color:#0369a1;padding:.25rem .6rem;border-radius:999px;font-size:.75rem}
+    .nav-link{color:#0f172a}
+    .nav-link:hover{color:#0369a1}
+    .whatsapp-fab{position:fixed;right:18px;bottom:18px;z-index:50;background:#25D366;color:white;border-radius:999px;padding:.9rem 1rem;box-shadow:0 10px 25px rgba(0,0,0,.15)}
+    .tick::before{content:"✓";margin-right:.5rem;color:#059669;font-weight:800}
+    .section{scroll-margin-top:90px}
+    .shadow-ring{box-shadow:0 0 0 8px rgba(14,165,233,.08)}
+    .table {border-collapse: separate; border-spacing: 0; width:100%}
+    .table th, .table td {padding:.9rem 1rem; border-bottom:1px solid #e5e7eb}
+    .accordion button{width:100%; text-align:left}
+  </style>
 </head>
-<body>
-<header>
-<h1>Civitas Public Services</h1>
-<p>Your one-stop solution for government services — PAN, Voter ID, Passport & more.</p>
-<a href="apply.html" class="button">Apply Now</a>
-</header>
+<body class="text-slate-800">
+  <!-- Sticky Nav -->
+  <header class="sticky top-0 z-50 bg-white/80 glass border-b">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2">
+        <span class="text-xl font-extrabold text-slate-900">CIVITAS</span>
+        <span class="hidden sm:inline badge">Public Services</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#process" class="nav-link">How it Works</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#apply" class="btn">Apply Now</a>
+      </nav>
+    </div>
+  </header>
 
-<section>
-<h2>Our Services</h2>
-<ul>
-<li>PAN Card (New/Update/Print)</li>
-<li>Voter ID (New/Update/Print)</li>
-<li>Passport (New/Renewal)</li>
-<li>Ayushman Bharat Card</li>
-<li>Driving License</li>
-<li>Aadhar Update</li>
-</ul>
-</section>
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-sky-50 via-white to-emerald-50"></div>
+    <div class="max-w-7xl mx-auto px-4 pt-16 pb-8 relative">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <div class="badge mb-4">Trusted by 11,000+ applicants</div>
+          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+            Government services, <span class="text-sky-600">done-for-you.</span>
+          </h1>
+          <p class="mt-4 text-lg text-slate-600">
+            PAN, Passport, Voter ID, Ayushman, Certificates, RTO & more — with
+            WhatsApp-first support, document guidance, and full tracking.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#apply" class="btn shadow-ring">Start Application</a>
+            <a href="#services" class="btn-outline">Explore Services</a>
+          </div>
+          <div class="mt-6 flex items-center gap-6 text-sm text-slate-600">
+            <div><span class="font-bold text-slate-900">7+ years</span> experience</div>
+            <div><span class="font-bold text-slate-900">NCR</span> doorstep pickup</div>
+            <div><span class="font-bold text-slate-900">Hindi/English</span> support</div>
+          </div>
+        </div>
+        <div>
+          <div class="card p-6">
+            <div class="text-lg font-semibold mb-2">Fast-track your request</div>
+            <form action="/apply.html" class="grid gap-3">
+              <input class="border rounded-lg p-3" placeholder="Full Name" required>
+              <input class="border rounded-lg p-3" placeholder="WhatsApp Number" required>
+              <select class="border rounded-lg p-3" required>
+                <option value="">Select a service</option>
+                <option>PAN Card</option><option>Voter ID</option>
+                <option>Passport</option><option>Ayushman Card</option>
+                <option>Driving License</option><option>Birth Certificate</option>
+              </select>
+              <button class="btn justify-center">Apply in 30 seconds</button>
+            </form>
+            <div class="text-xs text-slate-500 mt-2">By continuing you agree to our T&C.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer>
-<p>© 2025 Civitas Public Services | D 12 Tyagi Complex, Brij Vihar, Ghaziabad</p>
-<p>Contact: <a href="mailto:infocivitasservices@gmail.com">infocivitasservices@gmail.com</a> | 
-<a href="https://wa.me/919540212948">WhatsApp</a></p>
-</footer>
+  <!-- TRUST COUNTERS -->
+  <section class="max-w-7xl mx-auto px-4 py-10">
+    <div class="grid sm:grid-cols-3 gap-6">
+      <div class="card p-6 text-center"><div class="text-3xl font-extrabold">11,000+</div><div class="text-slate-600">Applications processed</div></div>
+      <div class="card p-6 text-center"><div class="text-3xl font-extrabold">4.8/5</div><div class="text-slate-600">Avg customer rating</div></div>
+      <div class="card p-6 text-center"><div class="text-3xl font-extrabold">24–48 hrs</div><div class="text-slate-600">Typical turnaround</div></div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section max-w-7xl mx-auto px-4 py-12">
+    <h2 class="text-3xl font-bold mb-6">Popular Services</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- card -->
+      <div class="card p-6">
+        <div class="badge mb-2">₹50–₹199 service fee</div>
+        <div class="font-semibold text-lg">PAN Card (New/Update/Print)</div>
+        <p class="text-slate-600 mt-1">Aadhaar eKYC, corrections, reprint. Status tracking included.</p>
+        <a href="#apply" class="btn mt-4">Apply PAN</a>
+      </div>
+      <div class="card p-6">
+        <div class="badge mb-2">₹50–₹149 service fee</div>
+        <div class="font-semibold text-lg">Voter ID (New/Update/Print)</div>
+        <p class="text-slate-600 mt-1">Form 6/8/8A, address change, delivery tracking.</p>
+        <a href="#apply" class="btn mt-4">Apply Voter ID</a>
+      </div>
+      <div class="card p-6">
+        <div class="badge mb-2">₹199–₹499 consulting</div>
+        <div class="font-semibold text-lg">Passport (New/Renewal)</div>
+        <p class="text-slate-600 mt-1">Document checklist, PSK appointment, guidance till issue.</p>
+        <a href="#apply" class="btn mt-4">Apply Passport</a>
+      </div>
+      <div class="card p-6">
+        <div class="badge mb-2">₹0–₹99 facilitation</div>
+        <div class="font-semibold text-lg">Ayushman Bharat Card</div>
+        <p class="text-slate-600 mt-1">Eligibility check, e-card download and updating.</p>
+        <a href="#apply" class="btn mt-4">Get Ayushman</a>
+      </div>
+      <div class="card p-6">
+        <div class="badge mb-2">Consulting</div>
+        <div class="font-semibold text-lg">Driving License & RTO Services</div>
+        <p class="text-slate-600 mt-1">LL, DL renewals, transfers, smart card assistance.</p>
+        <a href="#apply" class="btn mt-4">Start RTO Request</a>
+      </div>
+      <div class="card p-6">
+        <div class="badge mb-2">Certificates</div>
+        <div class="font-semibold text-lg">Birth/Death/Income/Caste/Domicile</div>
+        <p class="text-slate-600 mt-1">Checklist + filing + tracking till delivery.</p>
+        <a href="#apply" class="btn mt-4">Apply Certificate</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="section max-w-7xl mx-auto px-4 py-12">
+    <h2 class="text-3xl font-bold mb-6">How it Works</h2>
+    <div class="grid md:grid-cols-4 gap-6">
+      <div class="card p-6"><div class="font-semibold mb-2">1. Tell us the service</div><p class="text-slate-600">Submit quick form or WhatsApp us.</p></div>
+      <div class="card p-6"><div class="font-semibold mb-2">2. Document check</div><p class="text-slate-600">We share checklist and collect docs.</p></div>
+      <div class="card p-6"><div class="font-semibold mb-2">3. Filing & tracking</div><p class="text-slate-600">We file the request and track updates.</p></div>
+      <div class="card p-6"><div class="font-semibold mb-2">4. Delivery</div><p class="text-slate-600">Get your ID/certificate with support.</p></div>
+    </div>
+  </section>
+
+  <!-- PRICING / COMPARISON -->
+  <section id="pricing" class="section max-w-7xl mx-auto px-4 py-12">
+    <h2 class="text-3xl font-bold mb-6">Transparent Pricing</h2>
+    <div class="grid lg:grid-cols-2 gap-6">
+      <div class="card p-6">
+        <div class="text-lg font-semibold mb-3">Typical Service Fees</div>
+        <table class="table">
+          <tr><th>Service</th><th>Our Fee</th></tr>
+          <tr><td>PAN (new/update)</td><td>₹50–₹199</td></tr>
+          <tr><td>Voter ID (new/update)</td><td>₹50–₹149</td></tr>
+          <tr><td>Passport (consulting)</td><td>₹199–₹499</td></tr>
+          <tr><td>Ayushman</td><td>₹0–₹99</td></tr>
+        </table>
+        <div class="text-xs text-slate-500 mt-2">Govt. fees extra wherever applicable.</div>
+      </div>
+      <div class="card p-6">
+        <div class="text-lg font-semibold mb-3">Why Civitas vs Others</div>
+        <ul class="space-y-2 text-slate-700">
+          <li class="tick">End-to-end handling with status updates</li>
+          <li class="tick">WhatsApp-first support (Hindi/English)</li>
+          <li class="tick">NCR door-step pickup available</li>
+          <li class="tick">11,000+ customers served</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="max-w-7xl mx-auto px-4 py-12">
+    <h2 class="text-3xl font-bold mb-6">What people say</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="card p-6 text-slate-700">“Got my PAN correction done in 3 days. Super smooth.” <div class="mt-3 font-semibold">— Ankit G.</div></div>
+      <div class="card p-6 text-slate-700">“They fixed my Voter ID address and kept me updated on WhatsApp.” <div class="mt-3 font-semibold">— Ritu S.</div></div>
+      <div class="card p-6 text-slate-700">“Helpful team for passport appointment & docs. Recommended.” <div class="mt-3 font-semibold">— Vivek K.</div></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section max-w-7xl mx-auto px-4 py-12">
+    <h2 class="text-3xl font-bold mb-6">Frequently Asked Questions</h2>
+    <div class="space-y-3 accordion">
+      <div class="card p-5">
+        <button class="font-semibold">How long does PAN take?</button>
+        <div class="mt-2 text-slate-600 hidden">Usually 5–7 working days after successful submission.</div>
+      </div>
+      <div class="card p-5">
+        <button class="font-semibold">Do you provide doorstep pickup?</button>
+        <div class="mt-2 text-slate-600 hidden">Yes, in Ghaziabad/Delhi NCR for a small fee.</div>
+      </div>
+      <div class="card p-5">
+        <button class="font-semibold">What languages do you support?</button>
+        <div class="mt-2 text-slate-600 hidden">Hindi and English.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLY -->
+  <section id="apply" class="section max-w-7xl mx-auto px-4 py-12">
+    <div class="card p-8">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h3 class="text-2xl font-bold mb-2">Apply in minutes</h3>
+          <p class="text-slate-600">Complete the short form and we’ll contact you on WhatsApp within 10 minutes (working hours).</p>
+          <ul class="mt-4 space-y-2 text-slate-700">
+            <li class="tick">Document checklist & guidance</li>
+            <li class="tick">Live status tracking</li>
+            <li class="tick">NCR pickup available</li>
+          </ul>
+        </div>
+        <div>
+          <form action="/apply.html" class="grid gap-3">
+            <input class="border rounded-lg p-3" placeholder="Full Name" required>
+            <input class="border rounded-lg p-3" placeholder="WhatsApp Number" required>
+            <input class="border rounded-lg p-3" placeholder="Service (e.g., PAN, Passport)" required>
+            <button class="btn justify-center">Open Apply Page</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t bg-white">
+    <div class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-6">
+      <div>
+        <div class="text-xl font-extrabold">CIVITAS</div>
+        <div class="text-slate-600 mt-2">D 12 Tyagi Complex, Brij Vihar, Ghaziabad, UP 201011</div>
+        <div class="text-slate-600"><a href="tel:+919540212948">+91 9540212948</a> · <a href="mailto:infocivitasservices@gmail.com">infocivitasservices@gmail.com</a></div>
+      </div>
+      <div>
+        <div class="font-semibold mb-2">Quick Links</div>
+        <ul class="space-y-2 text-slate-600">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-semibold mb-2">Hours</div>
+        <div class="text-slate-600">Mon–Sat: 10am–7pm<br>Sun: Closed</div>
+      </div>
+    </div>
+    <div class="text-center text-xs text-slate-500 pb-6">© <span id="yr"></span> Civitas Public Services</div>
+  </footer>
+
+  <!-- WhatsApp FAB -->
+  <a class="whatsapp-fab" href="https://wa.me/919540212948?text=Hi%20Civitas%2C%20I%20want%20to%20apply" aria-label="WhatsApp">
+    WhatsApp
+  </a>
+
+  <script>
+    // Year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Simple accordion
+    document.querySelectorAll('.accordion button').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const panel = btn.nextElementSibling;
+        panel.classList.toggle('hidden');
+      })
+    });
+  </script>
 </body>
 </html>
